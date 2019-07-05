@@ -4,6 +4,13 @@ const addHistoryEvent = require('../actions/custom/add-history-event');
 const Task = require('./task');
 
 class TaskLambda extends Task {
+  get arn() {
+    if (this.config.stripLambdaArn) {
+      const resource = this.state.Resource.split(':');
+      return resource[resource.length - 1];
+    }
+    return this.state.Resource;
+  }
   async invokeLambda() {
     addHistoryEvent(this.execution, 'LAMBDA_FUNCTION_STARTED');
     const lambdaConfig = {};

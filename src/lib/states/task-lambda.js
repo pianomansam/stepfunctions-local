@@ -11,6 +11,7 @@ class TaskLambda extends Task {
     }
     return this.state.Resource;
   }
+
   async invokeLambda() {
     addHistoryEvent(this.execution, 'LAMBDA_FUNCTION_STARTED');
     const lambdaConfig = {};

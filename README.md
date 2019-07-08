@@ -89,7 +89,8 @@ Options:
   --lambda-endpoint <lambda-endpoint>  the endpoint for lambda
   --ecs-region <ecs-region>            the region for ECS
   --ecs-endpoint <ecs-endpoint>        the endpoint for ECS
-  -h, --help                           output usage information
+  --strip-lambda-arn				   only use function name when executing lambda
+  -h, --help                           output usage information  
 ```
 
 #### Using docker
@@ -109,6 +110,7 @@ stepfunctionsLocal.start({
   lambdaEndpoint: 'http://localhost:4574',
   ecsRegion: 'local',
   ecsEndpoint: 'http://localhost:4600',
+  stripLambdaArn: false
 });
 ```
 
@@ -119,6 +121,7 @@ stepfunctionsLocal.start({
 - lambda-endpoint: http://localhost:4574
 - ecs-region: local
 - ecs-endpoint: http://localhost:4600
+- stripLambdaArn: false
 
 ### Configure logs
 The service does not log anything by default. It uses the [debug](https://www.npmjs.com/package/debug) package which is based on the `DEBUG` environment variable. You can log process info by setting it.

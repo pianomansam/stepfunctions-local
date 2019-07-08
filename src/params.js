@@ -5,4 +5,5 @@ module.exports = {
   DEFAULT_LAMBDA_ENDPOINT: 'http://localhost:4574',
   DEFAULT_ECS_REGION: 'local',
   DEFAULT_ECS_ENDPOINT: 'http://localhost:4600',
+  DEFAULT_STRIP_LAMBDA_ARN: false,
 };

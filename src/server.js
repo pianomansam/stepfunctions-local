@@ -17,6 +17,7 @@ function start(config = {}) {
     lambdaRegion: params.DEFAULT_LAMBDA_REGION,
     ecsEndpoint: params.DEFAULT_ECS_ENDPOINT,
     ecsRegion: params.DEFAULT_ECS_REGION,
+    stripLambdaArn: params.DEFAULT_STRIP_LAMBDA_ARN,
   }, config);
 
   // Server creation

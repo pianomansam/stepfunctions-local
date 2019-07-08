@@ -12,6 +12,7 @@ program
   .option('--lambda-region <lambda-region>', 'the region for lambda')
   .option('--ecs-endpoint <ecs-endpoint>', 'the endpoint for ECS')
   .option('--ecs-region <ecs-region>', 'the region for ECS')
+  .option('--strip-lambda-arn', 'only use function name when executing lambda')
   .parse(process.argv);
 
 const config = {};
@@ -32,6 +33,9 @@ if (undefined !== program.ecsEndpoint) {
 }
 if (undefined !== program.ecsRegion) {
   config.ecsRegion = program.ecsRegion;
+}
+if (undefined !== program.stripLambdaArn) {
+  config.stripLambdaArn = true;
 }
 console.log('Starting stepfunctions-local server...');
 server.start(config);
